@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Hackathon Project</title>
-	<link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
-	<link href="https://fonts.googleapis.com/css?family=Istok+Web|Coda" rel="stylesheet" type="text/css">
+    <title>Hackathon Project</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web|Coda" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-	<nav class="nav-container">
-	    <div class="">
-	        <a href="#" class="brand-logo">HRPRO</a>
-		    <a href="#">Log Out</a>
-	    </div>
-	</nav>
-
-	<form class="loginForm">
-		<h1>Log In</h1>
-		<label>Username</label>
-		<input type="text" id="login" placeholder="Username">
-		<label>Password</label>
-		<input type="text" id="password" placeholder="Password">
-		<button id="loginBtn">Log In</button>
-	</form>
-
-	<section>
-	
-	</section>
-	<script type="text/javascript" src="/scripts/bundle.js"></script>
+    <nav class="nav-container">
+        <div class="">
+            <a href="#logIn" class="brand-logo">HRPRO</a>
+            <a href="#logIn">Log Out</a>
+        </div>
+    </nav>
+    <form class="loginForm">
+        <h1>Log In</h1>
+        <label>Username</label>
+        <input type="text" id="login" placeholder="Username">
+        <label>Password</label>
+        <input type="text" id="password" placeholder="Password">
+        <button href="#home" id="loginBtn">Log In</button>
+    </form>
+    
+        <section id="home" class="all">
+            <a href="#employees">employees</a>
+            <a href="#addNewEmployee">Add New Employee</a>
+        </section>
+        <section id="employees" class="all">
+            <a href="#singleEmployee">employees section</a>
+            <a href="#home">home</a>
+        </section>
+        <section id="singleEmployee" class="all">single employee section
+            <div id="vactionTime">vaction time</div>
+            <a href="#editEmployeeInfo">Edit Info</a>
+            <a href="#home">home</a>
+        </section>
+        <section id="editEmployeeInfo" class="all">edit section
+            <a href="#home">home</a>
+        </section>
+        <section id="addNewEmployee" class="all">new employee section
+            <a href="#home">home</a>
+        </section>
+    
+    <script type="text/javascript" src="/scripts/bundle.js"></script>
 </body>
 
 </html>
