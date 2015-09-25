@@ -1,4 +1,3 @@
-
 var Backbone = require('backbone');
 
 //creates the backbone employee model
@@ -13,4 +12,6 @@ module.exports = Backbone.Model.extend({
     },
     idAttribute: '',
     urlRoot: ''
+
 });
+
