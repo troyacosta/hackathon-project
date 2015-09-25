@@ -9,25 +9,28 @@ $(document).ready(function() {
     var $singleEmployee = $('#singleEmployee');
     var $editEmployeeInfo = $('#editEmployeeInfo');
     var $addNewEmployee = $('#addNewEmployee');
+    var $logOnForm = $('#logOnForm');
     var $all = $('.all');
 
     $all.hide();
 
-    $('#logOnForm').on('submit', function(event) {
+    $logOnForm.on('submit', function(event) {
 		event.preventDefault();
 	});
 
     var Router = Backbone.Router.extend({
         routes: {
+        	'': 'login',
             'homePage': 'homePage',
             'employees': 'employees',
             'singleEmployee': 'singleEmployee',
             'editEmployeeInfo': 'editEmployeeInfo',
-            'addNewEmployee': 'addNewEmployee'
+            'addNewEmployee': 'addNewEmployee',
+            'logOut': 'logIn',
         },
         logIn: function() {
-        	$all.hide;
-        	$loginForm.show();
+        	$all.hide();
+        	$logIn.show();
         },
         homePage: function() {
         	$all.hide();
@@ -35,17 +38,20 @@ $(document).ready(function() {
             $logIn.hide();
         },
         employees: function() {
+        	$all.hide();
         	$employees.show();
         },
         singleEmployee: function() {
+        	$all.hide();
         	$singleEmployee.show();
         },
         editEmployeeInfo: function() {
+        	$all.hide();
         	$editEmployeeInfo.show();
         },
         addNewEmployee: function() {
         	$all.hide();
-        	$editEmployeeInfo.show();
+        	$addEmployeeInfo.show();
         }
     });
     var router = new Router;
