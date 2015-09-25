@@ -4,3 +4,4 @@ module.exports = Backbone.Collection.extend({
 	model: EmployeeModel,
 	url: ''
 });
+

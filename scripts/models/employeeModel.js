@@ -12,4 +12,6 @@ module.exports = Backbone.Model.extend({
     },
     idAttribute: '',
     urlRoot: ''
+
 });
+

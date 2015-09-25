@@ -1,9 +1,35 @@
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css);
 html, body {
   margin: 0 auto; }
 
-.navbar {
-  background: #33B5E6;
-  font-family: Coda, Arial, sans-serif; }
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bolder;
+  letter-spacing: 0.05em; }
 
-a {
-  text-decoration: none; }
+.btn.outline {
+  background: none;
+  padding: .3em; }
+
+.btn-primary.outline {
+  border: 2px solid #0099cc;
+  color: #0099cc; }
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+  color: #33a6cc;
+  border-color: #33a6cc; }
+
+.btn-primary.outline:active, .btn-primary.outline.active {
+  border-color: #007299;
+  color: #007299;
+  box-shadow: none; }
+
+.btn {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none; }
