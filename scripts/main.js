@@ -3,26 +3,23 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 
 $(document).ready(function() {
-	
-    var $logIn = $('#logIn');
-    var $loginForm = $('.loginForm');
-    var $home = $('#home');
+	var $logIn = $('#logIn');
+    var $homePage = $('#homePage');
     var $employees = $('#employees');
     var $singleEmployee = $('#singleEmployee');
     var $editEmployeeInfo = $('#editEmployeeInfo');
     var $addNewEmployee = $('#addNewEmployee');
     var $all = $('.all');
 
-   // $all.hide();
+    $all.hide();
 
-    $loginForm.on('submit', function(event) {
+    $('#logOnForm').on('submit', function(event) {
 		event.preventDefault();
 	});
 
     var Router = Backbone.Router.extend({
         routes: {
-            'logIn': 'logIn',
-            'home': 'home',
+            'homePage': 'homePage',
             'employees': 'employees',
             'singleEmployee': 'singleEmployee',
             'editEmployeeInfo': 'editEmployeeInfo',
@@ -32,14 +29,15 @@ $(document).ready(function() {
         	$all.hide;
         	$loginForm.show();
         },
-        home: function() {
+        homePage: function() {
         	$all.hide();
-            $home.show();
+            $homePage.show();
+            $logIn.hide();
         },
         employees: function() {
         	$all.hide();
         	$employees.show();
-        }
+        },
         singleEmployee: function() {
         	$all.hide();
         	$singleEmployee.show();

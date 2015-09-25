@@ -12665,43 +12665,52 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 
 $(document).ready(function () {
-
-    $('.loginForm').on('submit', function (event) {
-        event.preventDefault();
-    });
-
     var $logIn = $('#logIn');
-    var $loginForm = $('.loginForm');
-    var $home = $('#home');
+    var $homePage = $('#homePage');
     var $employees = $('#employees');
     var $singleEmployee = $('#singleEmployee');
     var $editEmployeeInfo = $('#editEmployeeInfo');
     var $addNewEmployee = $('#addNewEmployee');
+    var $all = $('.all');
 
-    $home.hide();
-    $employees.hide();
-    $singleEmployee.hide();
-    $editEmployeeInfo.hide();
-    $addNewEmployee.hide();
+    $all.hide();
+
+    $('#logOnForm').on('submit', function (event) {
+        event.preventDefault();
+    });
 
     var Router = Backbone.Router.extend({
         routes: {
-            'logIn': 'logIn',
-            'home': 'home',
+            'homePage': 'homePage',
             'employees': 'employees',
             'singleEmployee': 'singleEmployee',
             'editEmployeeInfo': 'editEmployeeInfo',
             'addNewEmployee': 'addNewEmployee'
         },
-
-        home: function home() {
-            $loginForm.hide();
+        logIn: function logIn() {
+            $all.hide;
+            $loginForm.show();
+        },
+        homePage: function homePage() {
+            $all.hide();
+            $homePage.show();
             $logIn.hide();
-            $home.show();
         },
         employees: function employees() {
+            $all.hide();
             $employees.show();
-            $home.hide();
+        },
+        singleEmployee: function singleEmployee() {
+            $all.hide();
+            $singleEmployee.show();
+        },
+        editEmployeeInfo: function editEmployeeInfo() {
+            $all.hide();
+            $editEmployeeInfo.show();
+        },
+        addNewEmployee: function addNewEmployee() {
+            $all.hide();
+            $editEmployeeInfo.show();
         }
     });
     var router = new Router();

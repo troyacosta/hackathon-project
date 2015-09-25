@@ -18,12 +18,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">HRPRO</a>
+				<a class="navbar-brand" href="#homePage">HRPRO</a>
 			</div>
 	<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Home</a></li>
+					<li><a href="#homePage">Home</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -31,11 +31,11 @@
 
 	<!-- nav ends here-->
 	<!-- logIn starts here-->
-	<div class="container-fluid">
+	<div class="container-fluid" id="logIn">
 		<section class="row" id="home">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
-				<form role="form">
+				<form id="logOnForm" role="form">
 					<div class="form-group">						 
 						<label>
 							Username
@@ -48,9 +48,9 @@
 						</label>
 						<input type="password" class="form-control" id="adminPassword"/>
 					</div>
-					<button type="submit" class="btn btn-default">
+					<a href="#homePage" class="btn btn-default">
 						Log In
-					</button>
+					</a>
 				</form>
 			</div>
 			<div class="col-md-4"></div>
@@ -58,12 +58,7 @@
 	</div>
 <!--logIn ends here-->
 <!--Employee section starts here-->
-    <section id="home" class="col-md-4 all">
-        <a href="#employees">employees</a>
-        <a href="#addNewEmployee">Add New Employee</a>
-    </section>
-
-	<section class="container-fluid all" id="home">
+	<section class="container-fluid all" id="homePage">
 		<div class="row">
 			<div class="col-md-4">
 				<h2>
@@ -75,6 +70,7 @@
 				<p>
 					<a href="#employees">employees</a>
 					 <a href="#singleEmployee">employee section</a>
+					  <a href="#addNewEmployee">Add New Employee</a>
 				</p>		
 			</div>
 		</div>
