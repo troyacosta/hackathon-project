@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hackathon Project</title>
+	<title>HRPRO MOCKUP</title>
 	<link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
 	<link href="https://fonts.googleapis.com/css?family=Istok+Web|Coda" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<nav class="nav-container">
-	    <div class="">
-	        <a href="#" class="brand-logo">HRPRO</a>
-		    <a href="#">Log Out</a>
-	    </div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">HRPRO</a>
+			</div>
+	<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Home</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
 	</nav>
+	<!-- logIn starts here-->
+	<div class="container-fluid">
+		<section class="row" id="home">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form role="form">
+					<div class="form-group">						 
+						<label>
+							Username
+						</label>
+						<input type="username" class="form-control" id="adminUsername" />
+					</div>
+					<div class="form-group">
+						<label>
+							Password
+						</label>
+						<input type="password" class="form-control" id="adminPassword"/>
+					</div>
+					<button type="submit" class="btn btn-default">
+						Log In
+					</button>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</section>
+	</div>
+<!--logIn ends here-->
 
-	<form class="loginForm">
-		<h1>Log In</h1>
-		<label>Username</label>
-		<input type="text" id="login" placeholder="Username">
-		<label>Password</label>
-		<input type="text" id="password" placeholder="Password">
-		<button id="loginBtn">Log In</button>
-	</form>
+<!--Employee section starts here-->
 
-	<section>
-	
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>
+					Heading
+				</h2>
+				<p>
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</p>
+				<p>
+					<a class="btn" href="#">View details »</a>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h2>
+					Heading
+				</h2>
+				<p>
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</p>
+				<p>
+					<a class="btn" href="#">View details »</a>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h2>
+					Heading
+				</h2>
+				<p>
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</p>
+				<p>
+					<a class="btn" href="#">View details »</a>
+				</p>
+			</div>
+		</div>
 	</section>
-	<script type="text/javascript" src="/scripts/bundle.js"></script>
+			
 </body>
-
 </html>
