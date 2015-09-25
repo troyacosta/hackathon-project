@@ -35,15 +35,12 @@ $(document).ready(function() {
             $logIn.hide();
         },
         employees: function() {
-        	$all.hide();
         	$employees.show();
         },
         singleEmployee: function() {
-        	$all.hide();
         	$singleEmployee.show();
         },
         editEmployeeInfo: function() {
-        	$all.hide();
         	$editEmployeeInfo.show();
         },
         addNewEmployee: function() {
