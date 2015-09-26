@@ -104,6 +104,17 @@ footer a {
 #a {
   text-decoration: none; }
 
+.col-sm-4.staff {
+  float: left;
+  padding: 1em 0em 1em 2em;
+  background-image: url; }
+  .col-sm-4.staff a::before {
+    content: url("../images/seo-panda-icon.png");
+    height: 5px;
+    width: 5px;
+    clear: both;
+    text-align: center; }
+
 @media screen and (max-width: 48em) {
   html, body {
     margin: 0 auto;
@@ -121,7 +132,7 @@ footer a {
   #logOnForm {
     width: 29em;
     border-radius: .4em; }
-  .staff {
+  .staffers {
     text-align: right; }
   .message {
     text-align: left; } }
@@ -133,7 +144,7 @@ footer a {
   #logOnForm {
     width: 25em;
     border-radius: .4em; }
-  .staff {
+  .staffers {
     text-align: right; }
   .message {
     text-align: left; } }
