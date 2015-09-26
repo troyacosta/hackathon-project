@@ -34,7 +34,7 @@
 						</label>
 						<input type="password" class="form-control" id="adminPassword"/>
 					</div>
-					<a href="#homePage" class="btn btn-default">
+					<a href="#homePage" type="button" class="loginBtn">
 						Log In
 					</a>
 				</form>
@@ -45,13 +45,16 @@
 <!--Employee section starts here-->
 	<section class="container-fluid all" id="homePage">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-sm-4 staff">
+				<img src="./images/id.jpg"><br/>
 				<a class="btn" href="#employees">Employees</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-4">
+				<img src="./images/med.jpg"><br/>
 				<a class="btn" href="#benefits">Benefits</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-4 message">
+				<img src="./images/message.png"><br/>
 				<a class="btn" href="#messaging">Messaging</a>
 			</div>
 		</div>
@@ -64,11 +67,14 @@
 				<div class="col-md-6">
 					<a class="btn" href="#addNewEmployee">Add New Employee</a>
 				</div>
+
 				<div class="col-md-4 names">
 					
 					<ul class="employeeInfo">
 						
 					</ul>
+
+				
 					<p>
 						<a class="btn" href="#singleEmployee">View details »</a>
 					</p>
@@ -98,9 +104,14 @@
     			<input type="text" placeholer="name">
     		</label>
     	</form>
+	</section>
 
-    </section>
-
+<!-- 	<footer class="blockfive">
+		<a class="list">About Us</a>
+		<a class="list">Terms of Service</a>
+		<a class="list">Privacy</a>
+		<a class="list">Contact Us</a>
+	</footer> -->
     
     <script type="text/javascript" src="/scripts/bundle.js"></script>
 </body>
