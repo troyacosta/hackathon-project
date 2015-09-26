@@ -3,13 +3,17 @@
 html, body {
 	margin: 0 auto;
     font-family: 'Varela Round', sans-serif;
-    background: #2CA862;
+    background: white;
 }
 
 span {
     color: white;
 }
 
+.peopleLogo {
+    text-align: center;
+    color: white;
+}
 
 .navbar {
     background: #2CA862;
@@ -78,6 +82,15 @@ span {
 }
 .navbar {
     margin-bottom: 0;
+}
+
+#homePage {
+    text-align: center;
+    padding-top: 15em;
+}
+
+.benefits {
+    text-align: center; 
 }
 
 @media screen and (min-width: 30em){

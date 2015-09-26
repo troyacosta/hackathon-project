@@ -12700,12 +12700,15 @@ $(document).ready(function () {
             $logIn.hide();
         },
         employees: function employees() {
+            $all.hide();
             $employees.show();
         },
         singleEmployee: function singleEmployee() {
+            $all.hide();
             $singleEmployee.show();
         },
         editEmployeeInfo: function editEmployeeInfo() {
+            $all.hide();
             $editEmployeeInfo.show();
         },
         addNewEmployee: function addNewEmployee() {
