@@ -1,8 +1,9 @@
 'use strict';
 var $ = require('jquery');
 var Backbone = require('backbone');
-var EmployeeCollection = require('./collections/employeeCollection');
-var _ = require('backbone/node_modules/underscore');
+var EmployeeCollection = require('./collections/employeeCollection.js');
+var EmployeeModel = require('./models/employeeModel.js');
+var _ = require('backbone/node_modules/underscore/underscore-min.js');
 
 $(document).ready(function() {
     var $logIn = $('#logIn');
@@ -20,17 +21,18 @@ $(document).ready(function() {
         event.preventDefault();
     });
     var employeeCollection = new EmployeeCollection();
-    employeeCollection.fetch();
-    console.log(employeeCollection);
-   
-// function attachMenuDonorList(model) {
-//         $('.menuDonorList').append('<li><a id="a' + model.get('id') + '" href="#donor/' + model.get('id')+'">' + model.attributes.name + '</a></li>');
-//         $('#selectedDonor').append('<ul  class="donorsNames" id="b' + model.get('id') +'"><li>' + model.get('name') + '</li>' +
-//                                     '<li>' + model.get('email') + '</li>' +
-//                                     '<li>' + model.get('spousename') + '</li>' +
-//                                     '<li>' + model.get('phone') + '</li></ul>'
-//                                 )
-
+     function addNewEmployee(model) {
+        $('.employeeInfo').append('<li><a id="a'+model.get('id')+'"href="#employee/'+model.get('id')+'">'+model.attributes.name+'</a></li>');
+     }
+     employeeCollection.on('add', addNewEmployee);
+     employeeCollection.fetch();
+    
+    function singleEmployeeInfo(model) {
+        console.log('test');
+        $('.employeeInfo').append('<li>'+this.model.attributes.pay+'</li>');
+        console.log(this);
+    }
+    employeeCollection.on('click', this.singleEmployeeInfo, this);
 
     var Router = Backbone.Router.extend({
         routes: {

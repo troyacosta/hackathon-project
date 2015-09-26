@@ -1,6 +1,18 @@
 @import url(../node_modules/bootstrap/dist/css/bootstrap.css);
 html, body {
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: 'Varela Round', sans-serif;
+  background: white; }
+
+span {
+  color: white; }
+
+.peopleLogo {
+  text-align: center;
+  color: white; }
+
+.navbar {
+  background: #2CA862; }
 
 .navbar-brand {
   font-size: 1.5em;
@@ -10,6 +22,9 @@ html, body {
 .btn.outline {
   background: none;
   padding: .3em; }
+
+.btn-default {
+  box-shadow: inset 1px 1px 1px; }
 
 .btn-primary.outline {
   border: 2px solid #0099cc;
@@ -33,3 +48,46 @@ html, body {
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
   outline: 0 none; }
+
+.logOut {
+  color: #777777;
+  float: right;
+  padding-top: 1em;
+  padding-right: 1em; }
+
+#logOnForm {
+  background: #2CA862;
+  padding: 3em;
+  margin: 0 auto;
+  margin-top: 7em;
+  color: white; }
+
+.ion-ios-people {
+  padding: 6em;
+  width: 2em; }
+
+.navbar {
+  margin-bottom: 0; }
+
+#homePage {
+  text-align: center;
+  padding-top: 15em; }
+
+.benefits {
+  text-align: center; }
+
+@media screen and (min-width: 30em) {
+  html, body {
+    margin: 0 auto;
+    background: white; }
+  #logOnForm {
+    width: 30em;
+    border-radius: .4em; } }
+
+@media screen and (min-width: 50em) {
+  html, body {
+    margin: 0 auto;
+    background: white; }
+  #logOnForm {
+    width: 30em;
+    border-radius: .4em; } }
