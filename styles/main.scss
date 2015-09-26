@@ -124,7 +124,18 @@ footer a {
     text-decoration: none;
 } 
 
-.staff {
+.col-sm-4.staff {
+    float: left;
+    padding: 1em 0em 1em 2em;
+    background-image: url;
+
+    a::before{
+        content: url("../images/seo-panda-icon.png");
+        height:5px;
+        width: 5px;
+        clear: both;
+        text-align: center;
+    }
     
 }
 
@@ -151,7 +162,7 @@ footer a {
         width: 29em;
         border-radius: .4em;
     }
-    .staff {
+    .staffers {
         text-align: right;
     }
     .message {
@@ -168,7 +179,7 @@ footer a {
         width: 25em;
         border-radius: .4em;
     }
-    .staff {
+    .staffers {
         text-align: right;
     }
     .message {
