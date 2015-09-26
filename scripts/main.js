@@ -20,16 +20,16 @@ $(document).ready(function() {
     $logOnForm.on('submit', function(event) {
         event.preventDefault();
     });
-
+    $all.hide();
     var Router = Backbone.Router.extend({
         routes: {
             '': 'login',
             'homePage': 'homePage',
             'employees': 'employees',
-            'singleEmployee': 'singleEmployee',
             'editEmployeeInfo': 'editEmployeeInfo',
             'addNewEmployee': 'addNewEmployee',
             'logOut': 'logIn',
+            'employee/:id': 'showIndividual' 
         },
         logIn: function() {
             $all.hide();
@@ -44,10 +44,6 @@ $(document).ready(function() {
             $all.hide();
             $employees.show();
         },
-        singleEmployee: function() {
-            $all.hide();
-            $singleEmployee.show();
-        },
         editEmployeeInfo: function() {
             $all.hide();
             $editEmployeeInfo.show();
@@ -55,6 +51,10 @@ $(document).ready(function() {
         addNewEmployee: function() {
             $all.hide();
             $addEmployeeInfo.show();
+        },
+        showIndividual: function() {
+            $all.hide();
+            $singleEmployee:show();
         }
     });
 
@@ -68,6 +68,11 @@ $(document).ready(function() {
      employeeCollection.on('add', addNewEmployee);
      employeeCollection.fetch();
      $all.hide();
+
+     function singleEmployeeInfo(model) {
+        $('#singleEmployee').append('<div class="individual">'+model.get('name')+'</div>');
+     }
+     employeeCollection.on('click', singleEmployeeInfo);
     
     
 

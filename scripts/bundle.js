@@ -12697,16 +12697,16 @@ $(document).ready(function () {
     $logOnForm.on('submit', function (event) {
         event.preventDefault();
     });
-
+    $all.hide();
     var Router = Backbone.Router.extend({
         routes: {
             '': 'login',
             'homePage': 'homePage',
             'employees': 'employees',
-            'singleEmployee': 'singleEmployee',
             'editEmployeeInfo': 'editEmployeeInfo',
             'addNewEmployee': 'addNewEmployee',
-            'logOut': 'logIn'
+            'logOut': 'logIn',
+            'employee/:id': 'showIndividual'
         },
         logIn: function logIn() {
             $all.hide();
@@ -12721,10 +12721,6 @@ $(document).ready(function () {
             $all.hide();
             $employees.show();
         },
-        singleEmployee: function singleEmployee() {
-            $all.hide();
-            $singleEmployee.show();
-        },
         editEmployeeInfo: function editEmployeeInfo() {
             $all.hide();
             $editEmployeeInfo.show();
@@ -12732,6 +12728,10 @@ $(document).ready(function () {
         addNewEmployee: function addNewEmployee() {
             $all.hide();
             $addEmployeeInfo.show();
+        },
+        showIndividual: function showIndividual() {
+            $all.hide();
+            $singleEmployee: show();
         }
     });
 
@@ -12745,6 +12745,11 @@ $(document).ready(function () {
     employeeCollection.on('add', addNewEmployee);
     employeeCollection.fetch();
     $all.hide();
+
+    function singleEmployeeInfo(model) {
+        $('#singleEmployee').append('<div class="individual">' + model.get('name') + '</div>');
+    }
+    employeeCollection.on('click', singleEmployeeInfo);
 });
 
 },{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
