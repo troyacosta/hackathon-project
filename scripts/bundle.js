@@ -12661,8 +12661,20 @@ return jQuery;
 
 },{}],4:[function(require,module,exports){
 'use strict';
+
+var Backbone = require('backbone');
+var EmployeeModel = require('../models/employeeModel.js');
+module.exports = Backbone.Collection.extend({
+	model: EmployeeModel,
+	url: 'https://secure-fjord-5088.herokuapp.com/employees'
+});
+
+},{"../models/employeeModel.js":6,"backbone":1}],5:[function(require,module,exports){
+'use strict';
 var $ = require('jquery');
 var Backbone = require('backbone');
+var EmployeeCollection = require('./collections/employeeCollection');
+var _ = require('backbone/node_modules/underscore');
 
 $(document).ready(function () {
     var $logIn = $('#logIn');
@@ -12679,6 +12691,17 @@ $(document).ready(function () {
     $logOnForm.on('submit', function (event) {
         event.preventDefault();
     });
+    var employeeCollection = new EmployeeCollection();
+    employeeCollection.fetch();
+    console.log(employeeCollection);
+
+    // function attachMenuDonorList(model) {
+    //         $('.menuDonorList').append('<li><a id="a' + model.get('id') + '" href="#donor/' + model.get('id')+'">' + model.attributes.name + '</a></li>');
+    //         $('#selectedDonor').append('<ul  class="donorsNames" id="b' + model.get('id') +'"><li>' + model.get('name') + '</li>' +
+    //                                     '<li>' + model.get('email') + '</li>' +
+    //                                     '<li>' + model.get('spousename') + '</li>' +
+    //                                     '<li>' + model.get('phone') + '</li></ul>'
+    //                                 )
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -12700,12 +12723,15 @@ $(document).ready(function () {
             $logIn.hide();
         },
         employees: function employees() {
+            $all.hide();
             $employees.show();
         },
         singleEmployee: function singleEmployee() {
+            $all.hide();
             $singleEmployee.show();
         },
         editEmployeeInfo: function editEmployeeInfo() {
+            $all.hide();
             $editEmployeeInfo.show();
         },
         addNewEmployee: function addNewEmployee() {
@@ -12713,12 +12739,32 @@ $(document).ready(function () {
             $addEmployeeInfo.show();
         }
     });
-    var router = new Router();
 
+    var router = new Router();
     Backbone.history.start();
 });
 
-},{"backbone":1,"jquery":3}]},{},[4])
+},{"./collections/employeeCollection":4,"backbone":1,"backbone/node_modules/underscore":2,"jquery":3}],6:[function(require,module,exports){
+'use strict';
+var Backbone = require('backbone');
+
+//creates the backbone employee model
+module.exports = Backbone.Model.extend({
+    defaults: {
+        name: '',
+        dept: '',
+        yrs_employed: null,
+        position: '',
+        status: '',
+        pay: '',
+        days_taken: null
+    },
+    //idAttribute: 'id',
+    urlRoot: 'https://secure-fjord-5088.herokuapp.com/'
+
+});
+
+},{"backbone":1}]},{},[5])
 
 
 //# sourceMappingURL=bundle.js.map
