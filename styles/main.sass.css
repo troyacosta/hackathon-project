@@ -4,7 +4,7 @@ html, body {
   font-family: 'Varela Round', sans-serif; }
 
 span {
-  color: white; }
+  color: #FFDE47; }
 
 .peopleLogo {
   text-align: center;
@@ -92,28 +92,32 @@ span {
 footer {
   text-align: center;
   padding-left: 2em;
-  padding-right: 2em; }
+  padding-right: 2em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center; }
 
 footer a {
   list-style: none;
   width: 1em;
   line-height: 3em;
   padding-left: .5em;
-  color: white; }
+  color: #FFDE47; }
 
-#a {
-  text-decoration: none; }
+section.col-sm-4 {
+  margin-top: 2em;
+  padding-left: 4em; }
 
 .col-sm-4.staff {
   float: left;
-  padding: 1em 0em 1em 2em;
-  background-image: url; }
-  .col-sm-4.staff a::before {
-    content: url("../images/seo-panda-icon.png");
-    height: 5px;
-    width: 5px;
-    clear: both;
-    text-align: center; }
+  padding: 2em 0em 1em 2em; }
+
+.hr {
+  color: #0172B6;
+  font-size: 1.2em; }
 
 @media screen and (max-width: 48em) {
   html, body {

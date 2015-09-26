@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 var EmployeeCollection = require('./collections/employeeCollection.js');
 var EmployeeModel = require('./models/employeeModel.js');
 var _ = require('backbone/node_modules/underscore/underscore-min.js');
+var employeeCollection = new EmployeeCollection();
 
 $(document).ready(function() {
     var $logIn = $('#logIn');
@@ -52,18 +53,22 @@ $(document).ready(function() {
             $all.hide();
             $addEmployeeInfo.show();
         },
-        showIndividual: function() {
+        showIndividual: function(id) {
             $all.hide();
-            $singleEmployee:show();
+            $singleEmployee.show();
+
+            var eId = parseInt(id);
+
+            var employee = employeeCollection.findWhere({id: eId});
+            console.log(employee);
         }
     });
 
     var router = new Router;
     Backbone.history.start();
 
-    var employeeCollection = new EmployeeCollection();
      function addNewEmployee(model) {
-        $('.names').append('<div class="col-sm-4 staff"><a id="a'+model.get('id')+'"href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</div>');
+        $('.names').append('<section class=col-sm-4 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
      }
      employeeCollection.on('add', addNewEmployee);
      employeeCollection.fetch();
@@ -73,22 +78,4 @@ $(document).ready(function() {
         $('#singleEmployee').append('<div class="individual">'+model.get('name')+'</div>');
      }
      employeeCollection.on('click', singleEmployeeInfo);
-    
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

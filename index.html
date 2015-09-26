@@ -10,7 +10,7 @@
 
 <body>
 	<nav class="navbar">
-			<a class="navbar-brand" href="#homePage"><span>HRPRO</span></a>
+			<a class="navbar-brand" href="#homePage"><span><span class="hr"><bold>HR</bold></span>PRO</span></a>
 			<a href="#logOut" class="logOut"><span>Log Out</span></a>
 	</nav>
 
@@ -62,7 +62,7 @@
 
 <!-- This is where the manager gets a view of a single employee. -->
 	<section id="employees" class="all row">
-		<div class="names">				
+		<div class="names">
 
 		</div>
 		<div class="col-md-6">
@@ -75,7 +75,7 @@
     	John Smith
     	Phone Number: 858408298
     	Position: Farmer
-	    <div id="vactionTime">vacation time</div>
+	    <div id="vacationTime">vacation time</div>
 	    <a href="#editEmployeeInfo" class="btn">Edit Info</a>
     </section>
 
@@ -87,13 +87,13 @@
     	</form>
    </section>
    
-    <section id="addNewEmployee" class="all">
+    <section id="addEmployee" class="all">
     	<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-8">
 					<form>
 						<label>
-
+						NAME
 						</label>
 					</form>
 				</div>
@@ -103,12 +103,36 @@
 		</div>
 	</section>
 
-<!-- 	<footer class="blockfive">
+	<form>
+		<label>NAME<br>
+			<input type="text" placeholder=" Employee name" class="text">
+		</label>
+		<label>DEPARTMENT<br>
+			<input type="text" placeholder=" Accounting, Retail.." class="text">
+		</label>
+		<label>POSITION<br>
+			<input type="text" placeholder=" Accountant, Lawyer.." class="text">
+		</label>
+		<label>STATUS<br>
+			<select>
+				<option>full time</option>
+				<option>part time</option>
+			</select>
+		</label>
+		<label>PAY
+			<select>
+				<option>hourly</option>
+				<option>salary</option>
+			</select>
+		</label>
+	</form>
+
+	<footer class="blockfive">
 		<a class="list">About Us</a>
 		<a class="list">Terms of Service</a>
 		<a class="list">Privacy</a>
 		<a class="list">Contact Us</a>
-	</footer> -->
+	</footer>
     
     <script type="text/javascript" src="/scripts/bundle.js"></script>
 </body>
