@@ -141,9 +141,10 @@ section.col-sm-4 {
   margin: 3em;
   font-size: 1.3em; }
 
-.add {
+.addnewBtn {
   margin: 3em;
-  position: relative; }
+  position: relative;
+  text-align: right; }
 
 #editEmployeeInfo, #addNewEmployee {
   margin-top: 2em; }
