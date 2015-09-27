@@ -72,7 +72,8 @@
 
     <section id="singleEmployee" class="all">
     </section>
-
+    <section id="editEmployeeInfo" class="all">
+    </section>
   
    
     <section id="addNewEmployee" class="all">
@@ -129,14 +130,14 @@
 				    	<div>VACATION DAYS TAKEN:  <%- days_left %></div>
 				    	<div>STATUS:  <%- status %></div>
 				    	<div>AGE:  <%- yrs_employed %></div><br>
-				    	<a href="#editEmployeeInfo"><button type="button" class="btn btn-success btn-xs active">EDIT EMPLOYEE</button></a> 
+				    	<a href="#editEmployeeInfo/<%- id %>"><button type="button" class="btn btn-success btn-xs active" id="editButton">EDIT EMPLOYEE</button></a> 
 						<a href="#employees"><button type="button" class="btn btn-xs btn-success">GO BACK</button></a>
 					</div>
 				</div>
 			</div>
 		</section>
      </script>
-     <script type="text/template" id="editEmployeeInfo">
+     <script type="text/template" id="editEmployeeView">
      	<div class="container">
 	        <div class="row">
 	            <div class="col-sm-12">
