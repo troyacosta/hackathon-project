@@ -16,13 +16,13 @@ $(document).ready(function() {
     var $addNewEmployee = $('#addNewEmployee');
     var $logOnForm = $('#logOnForm');
     var $all = $('.all');
-    
+
     $all.hide();
 
     $logOnForm.on('submit', function(event) {
         event.preventDefault();
     });
-    
+
     var Router = Backbone.Router.extend({
         routes: {
             '': 'login',
@@ -31,7 +31,7 @@ $(document).ready(function() {
             'editEmployeeInfo': 'editEmployeeInfo',
             'addNewEmployee': 'addNewEmployee',
             'logOut': 'logIn',
-            'employee/:id': 'showIndividual' 
+            'employee/:id': 'showIndividual'
         },
         logIn: function() {
             $all.hide();
@@ -59,7 +59,9 @@ $(document).ready(function() {
             $singleEmployee.show();
 
             var eId = parseInt(id);
-            var employee = employeeCollection.findWhere({id: eId});
+            var employee = employeeCollection.findWhere({
+                id: eId
+            });
 
             singleEmployeeInfo(employee);
         }
@@ -68,40 +70,49 @@ $(document).ready(function() {
     var router = new Router;
     Backbone.history.start();
 
-     function printEmployees(model) {
-        $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
-     }
-       function addNewEmployee() {
+    function printEmployees(model) {
+        $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') + ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
+    }
+
+    function addNewEmployee() {
         employeeCollection.add({
             name: $('#newName').val(),
             dept: $('#newDept').val(),
             position: $('#newPosition').val(),
             status: $('#newStatus').val(),
-            pay: $('#newPay').val() 
+            pay: $('#newPay').val()
         });
     }
 
-     employeeCollection.on('add', printEmployees);
-     employeeCollection.fetch();
-     $('#newEmployeeForm').submit(function(e) {
+    employeeCollection.on('add', printEmployees);
+    employeeCollection.fetch();
+    $('#newEmployeeForm').submit(function(e) {
         e.preventDefault();
         addNewEmployee();
         $('#newName').val('');
         $('#newDept').val('');
         $('#newPosition').val('');
         $('#newStatus').val('');
-        $('#newPay').val(''); 
+        $('#newPay').val('');
+    });
+    $('#editEmployeeForm').click(function(e) {
+        e.preventDefault;
+    })
+
+    $all.hide();
+
+    function singleEmployeeInfo(model) {
+        var employeeView = new EmployeeView({
+            model: model
         });
-
-     $all.hide();
-
-
-     function singleEmployeeInfo(model) {
-        var employeeView = new EmployeeView({model:model});
         $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
-     }
+    }
+
+    //function that will populate the edit employee input fields 
+    function setEditEmployeeInputFields() {
+        $('#editName').val(this.model.name);
+    }
 
 
 });
-
