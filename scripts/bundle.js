@@ -12738,7 +12738,9 @@ $(document).ready(function () {
             $singleEmployee.show();
 
             var eId = parseInt(id);
-            var employee = employeeCollection.findWhere({ id: eId });
+            var employee = employeeCollection.findWhere({
+                id: eId
+            });
 
             singleEmployeeInfo(employee);
         }
@@ -12750,6 +12752,7 @@ $(document).ready(function () {
     function printEmployees(model) {
         $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') + ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
     }
+
     function addNewEmployee() {
         employeeCollection.add({
             name: $('#newName').val(),
@@ -12771,13 +12774,23 @@ $(document).ready(function () {
         $('#newStatus').val('');
         $('#newPay').val('');
     });
+    $('#editEmployeeForm').click(function (e) {
+        e.preventDefault;
+    });
 
     $all.hide();
 
     function singleEmployeeInfo(model) {
-        var employeeView = new EmployeeView({ model: model });
+        var employeeView = new EmployeeView({
+            model: model
+        });
         $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
+    }
+
+    //function that will populate the edit employee input fields
+    function setEditEmployeeInputFields() {
+        $('#editName').val(this.model.name);
     }
 });
 
