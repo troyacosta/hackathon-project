@@ -12683,7 +12683,8 @@ var Backbone = require('backbone');
 var EmployeeCollection = require('./collections/employeeCollection.js');
 var EmployeeModel = require('./models/employeeModel.js');
 var _ = require('backbone/node_modules/underscore/underscore-min.js');
-var EmployeeView = require("./views/employeeView");
+var EmployeeView = require('./views/employeeView');
+var EditEmployeeView = require('./views/editEmployeeView');
 var employeeCollection = new EmployeeCollection();
 
 $(document).ready(function () {
@@ -12707,7 +12708,7 @@ $(document).ready(function () {
             '': 'login',
             'homePage': 'homePage',
             'employees': 'employees',
-            'editEmployeeInfo': 'editEmployeeInfo',
+            'editEmployeeInfo/:id': 'editEmployeeInfo',
             'addNewEmployee': 'addNewEmployee',
             'logOut': 'logIn',
             'employee/:id': 'showIndividual'
@@ -12725,9 +12726,18 @@ $(document).ready(function () {
             $all.hide();
             $employees.show();
         },
-        editEmployeeInfo: function editEmployeeInfo() {
+        editEmployeeInfo: function editEmployeeInfo(id) {
+            console.log('editEmployeeInfo');
             $all.hide();
             $editEmployeeInfo.show();
+            var eId = parseInt(id);
+            var employee = employeeCollection.findWhere({
+                id: eId
+            });
+
+            console.log(employee);
+
+            _editEmployeeInfo(employee);
         },
         addNewEmployee: function addNewEmployee() {
             $all.hide();
@@ -12741,6 +12751,8 @@ $(document).ready(function () {
             var employee = employeeCollection.findWhere({
                 id: eId
             });
+
+            console.log(employee);
 
             singleEmployeeInfo(employee);
         }
@@ -12774,9 +12786,7 @@ $(document).ready(function () {
         $('#newStatus').val('');
         $('#newPay').val('');
     });
-    $('#editEmployeeForm').click(function (e) {
-        e.preventDefault;
-    });
+    $;
 
     $all.hide();
 
@@ -12789,12 +12799,17 @@ $(document).ready(function () {
     }
 
     //function that will populate the edit employee input fields
-    function setEditEmployeeInputFields() {
-        $('#editName').val(this.model.name);
+    function _editEmployeeInfo(model) {
+        // event.preventDefault();
+        var editEmployeeView = new EditEmployeeView({
+            model: model
+        });
+        $('#editEmployeeInfo').append(editEmployeeView.$el);
     }
+    // $('#editButton').on('click', editEmployee());
 });
 
-},{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"./views/employeeView":8,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
+},{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"./views/editEmployeeView":8,"./views/employeeView":9,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
 
@@ -12815,6 +12830,24 @@ module.exports = Backbone.Model.extend({
 });
 
 },{"backbone":1}],8:[function(require,module,exports){
+'use strict';
+var Backbone = require('backbone');
+var _ = require('backbone/node_modules/underscore');
+var $ = require('jquery');
+
+module.exports = Backbone.View.extend({
+	tagName:'div',
+	template: _.template($('#editEmployeeView').html()),
+	initialize: function(){
+		this.render();
+	},
+	render: function(){
+		console.log(this);
+		this.$el.html(this.template(this.model.toJSON()));
+		return this;
+	}
+});
+},{"backbone":1,"backbone/node_modules/underscore":3,"jquery":4}],9:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
 var _ = require('backbone/node_modules/underscore');
