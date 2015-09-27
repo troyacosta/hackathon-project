@@ -13,7 +13,7 @@ module.exports = Backbone.Model.extend({
         days_left: null
     },
     idAttribute: 'id',
-    urlRoot: 'https://secure-fjord-5088.herokuapp.com/'
+    urlRoot: 'https://secure-fjord-5088.herokuapp.com/employees'
 
 });
 

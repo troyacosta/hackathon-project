@@ -12750,18 +12750,7 @@ $(document).ready(function () {
     function printEmployees(model) {
         $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') + ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
     }
-    employeeCollection.on('add', printEmployees);
-    employeeCollection.fetch();
-    $all.hide();
-
-    function singleEmployeeInfo(model) {
-        var employeeView = new EmployeeView({ model: model });
-        $('#singleEmployee').html('');
-        $('#singleEmployee').append(employeeView.$el);
-    }
-
-    function addNewEmployee(e) {
-        e.preventDefault();
+    function addNewEmployee() {
         employeeCollection.add({
             name: $('#newName').val(),
             dept: $('#newDept').val(),
@@ -12769,6 +12758,26 @@ $(document).ready(function () {
             status: $('#newStatus').val(),
             pay: $('#newPay').val()
         });
+    }
+
+    employeeCollection.on('add', printEmployees);
+    employeeCollection.fetch();
+    $('#newEmployeeForm').submit(function (e) {
+        e.preventDefault();
+        addNewEmployee();
+        $('#newName').val('');
+        $('#newDept').val('');
+        $('#newPosition').val('');
+        $('#newStatus').val('');
+        $('#newPay').val('');
+    });
+
+    $all.hide();
+
+    function singleEmployeeInfo(model) {
+        var employeeView = new EmployeeView({ model: model });
+        $('#singleEmployee').html('');
+        $('#singleEmployee').append(employeeView.$el);
     }
 });
 
@@ -12788,7 +12797,7 @@ module.exports = Backbone.Model.extend({
         days_left: null
     },
     idAttribute: 'id',
-    urlRoot: 'https://secure-fjord-5088.herokuapp.com/'
+    urlRoot: 'https://secure-fjord-5088.herokuapp.com/employees'
 
 });
 

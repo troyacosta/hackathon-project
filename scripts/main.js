@@ -71,8 +71,28 @@ $(document).ready(function() {
      function printEmployees(model) {
         $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
      }
+       function addNewEmployee() {
+        employeeCollection.add({
+            name: $('#newName').val(),
+            dept: $('#newDept').val(),
+            position: $('#newPosition').val(),
+            status: $('#newStatus').val(),
+            pay: $('#newPay').val() 
+        });
+    }
+
      employeeCollection.on('add', printEmployees);
      employeeCollection.fetch();
+     $('#newEmployeeForm').submit(function(e) {
+        e.preventDefault();
+        addNewEmployee();
+        $('#newName').val('');
+        $('#newDept').val('');
+        $('#newPosition').val('');
+        $('#newStatus').val('');
+        $('#newPay').val(''); 
+        });
+
      $all.hide();
 
      function singleEmployeeInfo(model) {
@@ -80,27 +100,4 @@ $(document).ready(function() {
         $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
      }
-     
-     function addNewEmployee(e) {
-        e.preventDefault();
-        employeeCollection.add({
-            name: $('#newName').val(),
-            dept: $('#newDept').val(),
-            position: $('#newPosition').val(),
-            status: $('#newStatus').val(),
-            pay: $('#newPay').val() 
-        })
-    }
-
-
-
-
-
-
-
-
-
-
-
-     
 });
