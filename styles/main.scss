@@ -3,6 +3,7 @@
 html, body {
 	margin: 0 auto;
     font-family: 'Varela Round', sans-serif;
+    height: 100%;
 }
 
 span {
@@ -170,7 +171,17 @@ section.col-sm-4 {
 }
 
 .staffView {
-    margin: 1em;
+    margin: 3em;
+    font-size: 1.3em;
+
+}
+
+.add {
+    margin: 3em;
+    position: relative;
+}
+#editEmployeeInfo, #addNewEmployee {
+    margin-top: 2em;
 }
 @media screen and (max-width: 48em){
     html, body {
@@ -178,15 +189,11 @@ section.col-sm-4 {
     background: white;
 }
     #logOnForm{
-        width: 29em;
+        width: 25em;
         border-radius: .4em;
     }
     #homePage {
         padding-top: 5em;
-    }
-    .addInfoBtn {
-        width: 29em;
-        border-radius: .4em;        
     }
 }
 
@@ -196,12 +203,8 @@ section.col-sm-4 {
     background: white;
 }
     #logOnForm{
-        width: 29em;
+        width: 25em;
         border-radius: .4em;
-    }
-    .addInfoBtn {
-        width: 29em;
-        border-radius: .4em;        
     }
     .staffers {
         text-align: right;
@@ -219,10 +222,6 @@ section.col-sm-4 {
     #logOnForm{
         width: 25em;
         border-radius: .4em;
-    }
-    .addInfoBtn {
-        width: 29em;
-        border-radius: .4em;        
     }
     .staffers {
         text-align: right;

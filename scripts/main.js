@@ -52,7 +52,7 @@ $(document).ready(function() {
         },
         addNewEmployee: function() {
             $all.hide();
-            $addEmployeeInfo.show();
+            $addNewEmployee.show();
         },
         showIndividual: function(id) {
             $all.hide();
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
             var eId = parseInt(id);
             var employee = employeeCollection.findWhere({id: eId});
-            
+
             singleEmployeeInfo(employee);
         }
     });
@@ -69,7 +69,7 @@ $(document).ready(function() {
     Backbone.history.start();
 
      function addNewEmployee(model) {
-        $('.names').append('<section class=col-sm-4 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
+        $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
      }
      employeeCollection.on('add', addNewEmployee);
      employeeCollection.fetch();
