@@ -1,7 +1,8 @@
 @import url(../node_modules/bootstrap/dist/css/bootstrap.css);
 html, body {
   margin: 0 auto;
-  font-family: 'Varela Round', sans-serif; }
+  font-family: 'Varela Round', sans-serif;
+  height: 100%; }
 
 span {
   color: #FFDE47; }
@@ -137,30 +138,32 @@ section.col-sm-4 {
   border: none; }
 
 .staffView {
-  margin: 1em; }
+  margin: 3em;
+  font-size: 1.3em; }
+
+.add {
+  margin: 3em;
+  position: relative; }
+
+#editEmployeeInfo, #addNewEmployee {
+  margin-top: 2em; }
 
 @media screen and (max-width: 48em) {
   html, body {
     margin: 0 auto;
     background: white; }
   #logOnForm {
-    width: 29em;
+    width: 25em;
     border-radius: .4em; }
   #homePage {
-    padding-top: 5em; }
-  .addInfoBtn {
-    width: 29em;
-    border-radius: .4em; } }
+    padding-top: 5em; } }
 
 @media screen and (min-width: 48em) {
   html, body {
     margin: 0 auto;
     background: white; }
   #logOnForm {
-    width: 29em;
-    border-radius: .4em; }
-  .addInfoBtn {
-    width: 29em;
+    width: 25em;
     border-radius: .4em; }
   .staffers {
     text-align: right; }
@@ -173,9 +176,6 @@ section.col-sm-4 {
     background: white; }
   #logOnForm {
     width: 25em;
-    border-radius: .4em; }
-  .addInfoBtn {
-    width: 29em;
     border-radius: .4em; }
   .staffers {
     text-align: right; }
