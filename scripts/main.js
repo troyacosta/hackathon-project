@@ -17,12 +17,12 @@ $(document).ready(function() {
     var $logOnForm = $('#logOnForm');
     var $all = $('.all');
     
-
+    $all.hide();
 
     $logOnForm.on('submit', function(event) {
         event.preventDefault();
     });
-    $all.hide();
+    
     var Router = Backbone.Router.extend({
         routes: {
             '': 'login',
@@ -77,6 +77,7 @@ $(document).ready(function() {
 
      function singleEmployeeInfo(model) {
         var employeeView = new EmployeeView({model:model});
+        $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
      }
      // employeeCollection.on('click', singleEmployeeInfo);
