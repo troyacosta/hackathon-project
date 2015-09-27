@@ -68,10 +68,10 @@ $(document).ready(function() {
     var router = new Router;
     Backbone.history.start();
 
-     function addNewEmployee(model) {
+     function printEmployees(model) {
         $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a'+model.get('id')+' href="#employee/'+model.get('id')+'">'+model.get('name')+'</a><br>'+model.get('position')+'</section>');
      }
-     employeeCollection.on('add', addNewEmployee);
+     employeeCollection.on('add', printEmployees);
      employeeCollection.fetch();
      $all.hide();
 
@@ -80,5 +80,27 @@ $(document).ready(function() {
         $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
      }
-     // employeeCollection.on('click', singleEmployeeInfo);
+     
+     function addNewEmployee(e) {
+        e.preventDefault();
+        employeeCollection.add({
+            name: $('#newName').val(),
+            dept: $('#newDept').val(),
+            position: $('#newPosition').val(),
+            status: $('#newStatus').val(),
+            pay: $('#newPay').val() 
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+     
 });
