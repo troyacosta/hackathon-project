@@ -129,6 +129,7 @@ footer a {
 section.col-sm-4 {
     margin-top: 2em;
     padding-left: 4em;
+    font-size: 1.3em;
 }
 
 .col-sm-4.staff {
@@ -168,6 +169,9 @@ section.col-sm-4 {
     border: none;
 }
 
+.staffView {
+    margin: 1em;
+}
 @media screen and (max-width: 48em){
     html, body {
     margin: 0 auto;

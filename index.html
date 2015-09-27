@@ -104,12 +104,18 @@
 		<a class="list">Contact Us</a>
 	</footer>
      <script type="text/template" id="employeeView">
-    	<div>NAME: <%- name %></div>
-    	<div>PAY: <%- pay %></div>
-    	<div>POSITION: <%- position %></div>
-    	<div>STATUS: <%- status %></div>
-    	<div>YEARS EMPLOYED: <%- yrs_employed %></div>
-    </script>
+    <section class="staffView">EMPLOYEE INFORMATION<br>
+    	<div>NAME:  <%- name %></div>
+    	<div>DEPARTMENT:  <%- dept %></div>
+    	<div>POSITION:  <%- position %></div>
+    	<div>PAY:  <%- pay %></div>
+    	<div>VACATION DAYS TAKEN:  <%- days_left %></div>
+    	<div>STATUS:  <%- status %></div>
+    	<div>YEARS EMPLOYED:  <%- yrs_employed %></div><br>
+    	<a href="#editEmployeeInfo"><button>EDIT EMPLOYEE</button></a><br><br>
+    	<a href="#employees"><button>Go Back</button></a>
+    </section>
+     </script>
     <script type="text/javascript" src="/scripts/bundle.js"></script>
    
 </body>

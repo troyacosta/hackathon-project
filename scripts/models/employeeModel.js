@@ -10,7 +10,7 @@ module.exports = Backbone.Model.extend({
         position: '',
         status: '',
         pay: '',
-        days_taken: null
+        days_left: null
     },
     idAttribute: 'id',
     urlRoot: 'https://secure-fjord-5088.herokuapp.com/'
