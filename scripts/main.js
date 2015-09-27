@@ -79,5 +79,6 @@ $(document).ready(function() {
         var employeeView = new EmployeeView({model:model});
         $('#singleEmployee').append(employeeView.$el);
      }
-     // employeeCollection.on('click', singleEmployeeInfo);
+
 });
+
