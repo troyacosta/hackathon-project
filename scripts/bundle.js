@@ -12696,10 +12696,12 @@ $(document).ready(function () {
     var $logOnForm = $('#logOnForm');
     var $all = $('.all');
 
+    $all.hide();
+
     $logOnForm.on('submit', function (event) {
         event.preventDefault();
     });
-    $all.hide();
+
     var Router = Backbone.Router.extend({
         routes: {
             '': 'login',
@@ -12745,18 +12747,29 @@ $(document).ready(function () {
     var router = new Router();
     Backbone.history.start();
 
-    function addNewEmployee(model) {
+    function printEmployees(model) {
         $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') + ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
     }
-    employeeCollection.on('add', addNewEmployee);
+    employeeCollection.on('add', printEmployees);
     employeeCollection.fetch();
     $all.hide();
 
     function singleEmployeeInfo(model) {
         var employeeView = new EmployeeView({ model: model });
+        $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
     }
-    // employeeCollection.on('click', singleEmployeeInfo);
+
+    function addNewEmployee(e) {
+        e.preventDefault();
+        employeeCollection.add({
+            name: $('#newName').val(),
+            dept: $('#newDept').val(),
+            position: $('#newPosition').val(),
+            status: $('#newStatus').val(),
+            pay: $('#newPay').val()
+        });
+    }
 });
 
 },{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"./views/employeeView":8,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
