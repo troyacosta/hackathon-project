@@ -12683,6 +12683,7 @@ var Backbone = require('backbone');
 var EmployeeCollection = require('./collections/employeeCollection.js');
 var EmployeeModel = require('./models/employeeModel.js');
 var _ = require('backbone/node_modules/underscore/underscore-min.js');
+var EmployeeView = require("./views/employeeView");
 var employeeCollection = new EmployeeCollection();
 
 $(document).ready(function () {
@@ -12735,9 +12736,9 @@ $(document).ready(function () {
             $singleEmployee.show();
 
             var eId = parseInt(id);
-
             var employee = employeeCollection.findWhere({ id: eId });
-            console.log(employee);
+
+            singleEmployeeInfo(employee);
         }
     });
 
@@ -12752,12 +12753,13 @@ $(document).ready(function () {
     $all.hide();
 
     function singleEmployeeInfo(model) {
-        $('#singleEmployee').append('<div class="individual">' + model.get('name') + '</div>');
+        var employeeView = new EmployeeView({ model: model });
+        $('#singleEmployee').append(employeeView.$el);
     }
-    employeeCollection.on('click', singleEmployeeInfo);
+    // employeeCollection.on('click', singleEmployeeInfo);
 });
 
-},{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
+},{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"./views/employeeView":8,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
 
@@ -12777,7 +12779,25 @@ module.exports = Backbone.Model.extend({
 
 });
 
-},{"backbone":1}]},{},[6])
+},{"backbone":1}],8:[function(require,module,exports){
+'use strict';
+var Backbone = require('backbone');
+var _ = require('backbone/node_modules/underscore');
+var $ = require('jquery');
+
+module.exports = Backbone.View.extend({
+	tagName: 'section',
+	template: _.template($('#employeeView').html()),
+	initialize: function initialize() {
+		this.render();
+	},
+	render: function render() {
+		this.$el.html(this.template(this.model.toJSON()));
+		return this;
+	}
+});
+
+},{"backbone":1,"backbone/node_modules/underscore":3,"jquery":4}]},{},[6])
 
 
 //# sourceMappingURL=bundle.js.map

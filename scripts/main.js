@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 var EmployeeCollection = require('./collections/employeeCollection.js');
 var EmployeeModel = require('./models/employeeModel.js');
 var _ = require('backbone/node_modules/underscore/underscore-min.js');
+var EmployeeView = require("./views/employeeView");
 var employeeCollection = new EmployeeCollection();
 
 $(document).ready(function() {
@@ -58,9 +59,9 @@ $(document).ready(function() {
             $singleEmployee.show();
 
             var eId = parseInt(id);
-
             var employee = employeeCollection.findWhere({id: eId});
-            console.log(employee);
+            
+            singleEmployeeInfo(employee);
         }
     });
 
@@ -75,7 +76,8 @@ $(document).ready(function() {
      $all.hide();
 
      function singleEmployeeInfo(model) {
-        $('#singleEmployee').append('<div class="individual">'+model.get('name')+'</div>');
+        var employeeView = new EmployeeView({model:model});
+        $('#singleEmployee').append(employeeView.$el);
      }
-     employeeCollection.on('click', singleEmployeeInfo);
+     // employeeCollection.on('click', singleEmployeeInfo);
 });

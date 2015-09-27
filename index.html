@@ -38,7 +38,6 @@
 						Log In
 					</a>
 				</form>
-			<div class="col-md-4"></div>
 		</section>
 	</div>
 <!--logIn ends here-->
@@ -46,15 +45,15 @@
 	<section class="container-fluid all " id="homePage">
 		<div class="row">
 			<div class="col-sm-4 staffers">
-				<img src="./images/staff.gif"><br/>
+				<a href="#employees"><img src="./images/staff.gif"><br/></a>
 				<a class="btn" href="#employees">Employees</a>
 			</div>
 			<div class="col-sm-4">
-				<img src="./images/med.gif"><br/>
+				<a href="#benefits"><img src="./images/med.gif"><br/></a>
 				<a class="btn" href="#benefits">Benefits</a>
 			</div>
 			<div class="col-sm-4 message">
-				<img src="./images/message.png"><br/>
+				<a href="#messaging"><img src="./images/message.png"><br/></a>
 				<a class="btn" href="#messaging">Messaging</a>
 			</div>
 		</div>
@@ -72,11 +71,6 @@
 	</section>
 
     <section id="singleEmployee" class="all">
-    	John Smith
-    	Phone Number: 858408298
-    	Position: Farmer
-	    <div id="vacationTime">vacation time</div>
-	    <a href="#editEmployeeInfo" class="btn">Edit Info</a>
     </section>
 
    <section id="editEmployeeInfo" class="all">
@@ -103,38 +97,21 @@
 		</div>
 	</section>
 
-	<form>
-		<label>NAME<br>
-			<input type="text" placeholder=" Employee name" class="text">
-		</label>
-		<label>DEPARTMENT<br>
-			<input type="text" placeholder=" Accounting, Retail.." class="text">
-		</label>
-		<label>POSITION<br>
-			<input type="text" placeholder=" Accountant, Lawyer.." class="text">
-		</label>
-		<label>STATUS<br>
-			<select>
-				<option>full time</option>
-				<option>part time</option>
-			</select>
-		</label>
-		<label>PAY
-			<select>
-				<option>hourly</option>
-				<option>salary</option>
-			</select>
-		</label>
-	</form>
-
 	<footer class="blockfive">
 		<a class="list">About Us</a>
 		<a class="list">Terms of Service</a>
 		<a class="list">Privacy</a>
 		<a class="list">Contact Us</a>
 	</footer>
-    
+     <script type="text/template" id="employeeView">
+    	<div>NAME: <%- name %></div>
+    	<div>PAY: <%- pay %></div>
+    	<div>POSITION: <%- position %></div>
+    	<div>STATUS: <%- status %></div>
+    	<div>YEARS EMPLOYED: <%- yrs_employed %></div>
+    </script>
     <script type="text/javascript" src="/scripts/bundle.js"></script>
+   
 </body>
 
 </html>
