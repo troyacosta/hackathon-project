@@ -10,6 +10,20 @@ span {
     color: #FFDE47;
 }
 
+h2 {
+    margin-left: 1em;
+}
+
+.addnewBtn {
+    float: right;
+    margin-top: -3.3em;
+    margin-right: 2em;
+    background: #2CA862;
+    border-radius: .3em;
+    padding: .5em .7em;
+    text-transform: uppercase;
+}
+
 .peopleLogo {
     text-align: center;
     color: white;
@@ -176,14 +190,10 @@ section.col-sm-4 {
 
 }
 
-.addnewBtn {
-    margin: 3em;
-    position: relative;
-    text-align: right;
-}
 #editEmployeeInfo, #addNewEmployee {
     margin-top: 2em;
 }
+
 @media screen and (max-width: 48em){
     html, body {
     margin: 0 auto;
