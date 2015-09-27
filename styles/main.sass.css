@@ -7,6 +7,18 @@ html, body {
 span {
   color: #FFDE47; }
 
+h2 {
+  margin-left: 1em; }
+
+.addnewBtn {
+  float: right;
+  margin-top: -3.3em;
+  margin-right: 2em;
+  background: #2CA862;
+  border-radius: .3em;
+  padding: 0.5em 0.7em;
+  text-transform: uppercase; }
+
 .peopleLogo {
   text-align: center;
   color: white; }
@@ -141,11 +153,14 @@ section.col-sm-4 {
   margin: 3em;
   font-size: 1.3em; }
 
+<<<<<<< HEAD
+=======
 .addnewBtn {
   margin: 3em;
   position: relative;
   text-align: right; }
 
+>>>>>>> 47fb313279277d31c32c57543c7af0dd9ceff09f
 #editEmployeeInfo, #addNewEmployee {
   margin-top: 2em; }
 
