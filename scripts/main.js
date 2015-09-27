@@ -95,9 +95,13 @@ $(document).ready(function() {
 
      $all.hide();
 
+
      function singleEmployeeInfo(model) {
         var employeeView = new EmployeeView({model:model});
         $('#singleEmployee').html('');
         $('#singleEmployee').append(employeeView.$el);
      }
+
+
 });
+
