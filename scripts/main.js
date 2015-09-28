@@ -40,41 +40,39 @@ $(document).ready(function() {
         },
         homePage: function() {
             $all.hide();
-            $homePage.show();
             $logIn.hide();
+            $homePage.show();            
         },
         employees: function() {
             $all.hide();
+            $logIn.hide();
             $employees.show();
         },
         editEmployeeInfo: function(id) {
             console.log('editEmployeeInfo')
             $all.hide();
+            $logIn.hide();
             $editEmployeeInfo.show();
             var eId = parseInt(id);
             var employee = employeeCollection.findWhere({
                 id: eId
             });
-
-            console.log(employee);
-
             editEmployeeInfo(employee);
         },
         addNewEmployee: function() {
             $all.hide();
+            $logIn.hide();
             $addNewEmployee.show();
         },
         showIndividual: function(id) {
             $all.hide();
+            $logIn.hide();
             $singleEmployee.show();
 
             var eId = parseInt(id);
             var employee = employeeCollection.findWhere({
                 id: eId
             });
-
-            console.log(employee);
-
             singleEmployeeInfo(employee);
         }
     });
@@ -83,7 +81,8 @@ $(document).ready(function() {
     Backbone.history.start();
 
     function printEmployees(model) {
-        $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') + ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
+        $('.names').append('<section class=col-sm-4 col-lg-3 staff><a id=a' + model.get('id') +
+         ' href="#employee/' + model.get('id') + '">' + model.get('name') + '</a><br>' + model.get('position') + '</section>');
     }
 
     function addNewEmployee() {
@@ -107,10 +106,7 @@ $(document).ready(function() {
         $('#newStatus').val('');
         $('#newPay').val('');
     });
-    $
-
-    $all.hide();
-
+    
     function singleEmployeeInfo(model) {
         var employeeView = new EmployeeView({
             model: model
@@ -121,12 +117,10 @@ $(document).ready(function() {
 
     //function that will populate the edit employee input fields 
     function editEmployeeInfo(model) {
-        // event.preventDefault();
         var editEmployeeView = new EditEmployeeView({
             model: model
         });
+        $('#editEmployeeInfo').html('');
         $('#editEmployeeInfo').append(editEmployeeView.$el);
     }
-    // $('#editButton').on('click', editEmployee());
-
 });

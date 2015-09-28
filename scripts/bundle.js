@@ -12719,41 +12719,39 @@ $(document).ready(function () {
         },
         homePage: function homePage() {
             $all.hide();
-            $homePage.show();
             $logIn.hide();
+            $homePage.show();
         },
         employees: function employees() {
             $all.hide();
+            $logIn.hide();
             $employees.show();
         },
         editEmployeeInfo: function editEmployeeInfo(id) {
             console.log('editEmployeeInfo');
             $all.hide();
+            $logIn.hide();
             $editEmployeeInfo.show();
             var eId = parseInt(id);
             var employee = employeeCollection.findWhere({
                 id: eId
             });
-
-            console.log(employee);
-
             _editEmployeeInfo(employee);
         },
         addNewEmployee: function addNewEmployee() {
             $all.hide();
+            $logIn.hide();
             $addNewEmployee.show();
         },
         showIndividual: function showIndividual(id) {
             $all.hide();
+            $logIn.hide();
             $singleEmployee.show();
 
             var eId = parseInt(id);
             var employee = employeeCollection.findWhere({
                 id: eId
             });
-
-            console.log(employee);
-
             singleEmployeeInfo(employee);
         }
     });
@@ -12786,9 +12784,6 @@ $(document).ready(function () {
         $('#newStatus').val('');
         $('#newPay').val('');
     });
-    $;
-
-    $all.hide();
 
     function singleEmployeeInfo(model) {
         var employeeView = new EmployeeView({
@@ -12800,13 +12795,12 @@ $(document).ready(function () {
 
     //function that will populate the edit employee input fields
     function _editEmployeeInfo(model) {
-        // event.preventDefault();
         var editEmployeeView = new EditEmployeeView({
             model: model
         });
+        $('#editEmployeeInfo').html('');
         $('#editEmployeeInfo').append(editEmployeeView.$el);
     }
-    // $('#editButton').on('click', editEmployee());
 });
 
 },{"./collections/employeeCollection.js":5,"./models/employeeModel.js":7,"./views/editEmployeeView":8,"./views/employeeView":9,"backbone":1,"backbone/node_modules/underscore/underscore-min.js":2,"jquery":4}],7:[function(require,module,exports){
