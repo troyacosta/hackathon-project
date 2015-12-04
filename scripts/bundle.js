@@ -12764,6 +12764,14 @@ $(document).ready(function () {
     }
 
     function addNewEmployee() {
+        // var newHire = new EmployeeModel({
+        //     name: $('#newName').val(),
+        //     dept: $('#newDept').val(),
+        //     position: $('#newPosition').val(),
+        //     status: $('#newStatus').val(),
+        //     pay: $('#newPay').val()
+        // });
+        // newHire.save();
         employeeCollection.add({
             name: $('#newName').val(),
             dept: $('#newDept').val(),
